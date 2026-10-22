@@ -1,6 +1,7 @@
 # VastraFlow : Retail Clothing Shop POS & Inventory Management System
 
 [![Release](https://img.shields.io/badge/Release-v3.0.0-blue.svg)](https://github.com/BeginnerAman/VastraFlow/releases)
+[![Downloads](https://img.shields.io/github/downloads/BeginnerAman/VastraFlow/total.svg?color=10b981&label=Downloads)](https://github.com/BeginnerAman/VastraFlow/releases)
 [![Platform](https://img.shields.io/badge/Platform-Windows%2010%20%7C%2011%20(64--bit)-indigo.svg)](https://github.com/BeginnerAman/VastraFlow)
 [![Offline](https://img.shields.io/badge/Architecture-100%25%20Offline%20Engine-emerald.svg)](https://github.com/BeginnerAman/VastraFlow)
 [![Printers](https://img.shields.io/badge/Printers-80mm%20Thermal%20%2B%20A4%20PDF-cyan.svg)](https://github.com/BeginnerAman/VastraFlow)
