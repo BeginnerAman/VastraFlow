@@ -872,48 +872,78 @@
 
       <div class="order-modal-header">
         <div class="order-modal-badge">
-          <i data-lucide="mail"></i>
-          <span>License Order Desk</span>
+          <i data-lucide="shield-check"></i>
+          <span>Official Licensing Desk</span>
         </div>
       </div>
 
-      <h3 class="order-modal-title" id="orderModalPlanTitle">Order VastraFlow License</h3>
-      <p class="order-modal-desc">
-        Send your shop details and Machine ID (HWID) to our sales desk. We will issue your license certificate and share official UPI payment details.
-      </p>
+      <div class="order-plan-card">
+        <div>
+          <h3 class="order-plan-title" id="orderModalPlanTitle">Lifetime Pro License</h3>
+          <span class="order-plan-subtitle" id="orderModalSubtitle">Permanent node-locked offline activation</span>
+        </div>
+        <div class="order-plan-price-tag">
+          <div class="order-plan-price" id="orderModalPrice">Rs. 4,999</div>
+          <span class="order-plan-badge" id="orderModalBadge">One-Time Perpetual</span>
+        </div>
+      </div>
 
-      <div class="order-action-buttons">
-        <a href="#" id="orderGmailBtn" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          <i data-lucide="external-link"></i> Open in Gmail Web
+      <div class="order-actions-stack">
+        <a href="#" id="orderGmailBtn" target="_blank" rel="noopener noreferrer" class="btn-order-action primary">
+          <div class="order-action-content">
+            <div class="order-action-icon">
+              <i data-lucide="external-link"></i>
+            </div>
+            <div class="order-action-texts">
+              <strong>Compose in Gmail (Web)</strong>
+              <span>Opens email in your browser with pre-filled details</span>
+            </div>
+          </div>
+          <i data-lucide="arrow-right" style="width: 18px; height: 18px;"></i>
         </a>
-        <a href="#" id="orderMailtoBtn" class="btn btn-secondary">
-          <i data-lucide="mail"></i> Open in Desktop Mail App
+
+        <a href="#" id="orderMailtoBtn" class="btn-order-action secondary">
+          <div class="order-action-content">
+            <div class="order-action-icon">
+              <i data-lucide="mail"></i>
+            </div>
+            <div class="order-action-texts">
+              <strong>Open Desktop Email App</strong>
+              <span>Outlook, Windows Mail, or Apple Mail</span>
+            </div>
+          </div>
+          <i data-lucide="arrow-up-right" style="width: 18px; height: 18px; color: var(--text-muted);"></i>
         </a>
       </div>
 
-      <div class="order-template-box">
-        <div class="order-template-row">
-          <span class="order-recipient-label">Recipient: <strong>vastraflow.sales@gmail.com</strong></span>
-          <button type="button" class="btn-copy-mini" id="copyEmailBtn">
+      <div class="order-contact-bar">
+        <div class="order-contact-text">
+          <span>Official Sales Email</span>
+          <strong>vastraflow.sales@gmail.com</strong>
+        </div>
+        <div class="order-contact-buttons">
+          <button type="button" class="btn-copy-chip" id="copyEmailBtn">
             <i data-lucide="copy"></i> <span>Copy Email</span>
           </button>
-        </div>
-        <div class="order-template-row">
-          <span class="order-recipient-label">Pre-filled Message Template:</span>
-          <button type="button" class="btn-copy-mini" id="copyTemplateBtn">
-            <i data-lucide="copy"></i> <span>Copy Template</span>
+          <button type="button" class="btn-copy-chip" id="copyTemplateBtn">
+            <i data-lucide="file-text"></i> <span>Copy Template</span>
           </button>
         </div>
-        <pre class="order-template-pre" id="orderTemplatePre"></pre>
       </div>
 
-      <div class="order-modal-note">
-        <i data-lucide="info"></i>
-        <span>Once you send this email, our team will verify your Machine ID and contact you directly via WhatsApp or phone with your license certificate.</span>
-      </div>
-
-      <div style="margin-top: 20px; display: flex; justify-content: flex-end;">
-        <button class="btn btn-secondary btn-sm" id="orderModalDismiss">Close</button>
+      <div class="order-steps-mini">
+        <div class="order-step-item">
+          <div class="order-step-num">1</div>
+          <div class="order-step-text">Send Shop Details &amp; Machine ID</div>
+        </div>
+        <div class="order-step-item">
+          <div class="order-step-num">2</div>
+          <div class="order-step-text">Receive Official UPI Invoice</div>
+        </div>
+        <div class="order-step-item">
+          <div class="order-step-num">3</div>
+          <div class="order-step-text">Instant License Key Issuance</div>
+        </div>
       </div>
     </div>
   </div>

@@ -96,15 +96,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Email Order & Licensing Modal Controller
   const orderModal = document.getElementById("orderModal");
   const orderModalClose = document.getElementById("orderModalClose");
-  const orderModalDismiss = document.getElementById("orderModalDismiss");
-  const orderPlanTitle = document.getElementById("orderModalPlanTitle");
   const orderGmailBtn = document.getElementById("orderGmailBtn");
   const orderMailtoBtn = document.getElementById("orderMailtoBtn");
-  const orderTemplatePre = document.getElementById("orderTemplatePre");
   const copyEmailBtn = document.getElementById("copyEmailBtn");
   const copyTemplateBtn = document.getElementById("copyTemplateBtn");
 
   const salesEmail = "vastraflow.sales@gmail.com";
+  let activeTemplateText = "";
 
   const buildOrderTemplate = (planName, planPrice) => {
     if (planName === "Support & Inquiries" || planName === "General Inquiry") {
@@ -114,9 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 I have a question regarding VastraFlow Retail POS.
 
-My Details:
+My Store and Contact Details:
 - Name: 
-- Shop / Business Name: 
+- Shop Name: 
 - Phone / WhatsApp Number: 
 - City / State: 
 - Requirement or Question: 
@@ -149,14 +147,28 @@ Thank you.`
     if (!orderModal) return;
 
     const templateData = buildOrderTemplate(planName, planPrice);
-    if (orderPlanTitle) {
-      orderPlanTitle.textContent = planPrice
-        ? `Order VastraFlow ${planName} (${planPrice})`
-        : `Contact VastraFlow Sales Desk`;
-    }
+    activeTemplateText = templateData.body;
 
-    if (orderTemplatePre) {
-      orderTemplatePre.textContent = templateData.body;
+    const planTitleEl = document.getElementById("orderModalPlanTitle");
+    const planSubtitleEl = document.getElementById("orderModalSubtitle");
+    const planPriceEl = document.getElementById("orderModalPrice");
+    const planBadgeEl = document.getElementById("orderModalBadge");
+
+    if (planName === "Lifetime Pro") {
+      if (planTitleEl) planTitleEl.textContent = "Lifetime Pro License";
+      if (planSubtitleEl) planSubtitleEl.textContent = "Permanent node-locked offline activation";
+      if (planPriceEl) planPriceEl.textContent = "Rs. 4,999";
+      if (planBadgeEl) planBadgeEl.textContent = "One-Time Perpetual";
+    } else if (planName === "1-Year Starter") {
+      if (planTitleEl) planTitleEl.textContent = "1-Year Starter License";
+      if (planSubtitleEl) planSubtitleEl.textContent = "Annual retail workstation activation";
+      if (planPriceEl) planPriceEl.textContent = "Rs. 1,999";
+      if (planBadgeEl) planBadgeEl.textContent = "365-Day Plan";
+    } else {
+      if (planTitleEl) planTitleEl.textContent = "Sales & Licensing Desk";
+      if (planSubtitleEl) planSubtitleEl.textContent = "Direct setup and license inquiries";
+      if (planPriceEl) planPriceEl.textContent = "Direct Help";
+      if (planBadgeEl) planBadgeEl.textContent = "Free Assistance";
     }
 
     const encodedSubject = encodeURIComponent(templateData.subject);
@@ -197,10 +209,6 @@ Thank you.`
     orderModalClose.addEventListener("click", closeOrderModal);
   }
 
-  if (orderModalDismiss) {
-    orderModalDismiss.addEventListener("click", closeOrderModal);
-  }
-
   if (orderModal) {
     orderModal.addEventListener("click", (e) => {
       if (e.target === orderModal) {
@@ -235,7 +243,7 @@ Thank you.`
   // Copy Template Button
   if (copyTemplateBtn) {
     copyTemplateBtn.addEventListener("click", () => {
-      const textToCopy = orderTemplatePre ? orderTemplatePre.textContent : "";
+      const textToCopy = activeTemplateText || buildOrderTemplate("Lifetime Pro", "Rs. 4,999").body;
       navigator.clipboard.writeText(textToCopy).then(() => {
         const originalHtml = copyTemplateBtn.innerHTML;
         copyTemplateBtn.classList.add("copied");
