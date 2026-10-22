@@ -75,6 +75,20 @@ A comprehensive A to Z user guide and training manual for retail staff is hosted
 
 ---
 
+## Pricing and Licensing
+
+| Plan | Price | Validity | Highlights |
+| :--- | :--- | :--- | :--- |
+| **15-Day Free Evaluation** | Rs. 0 | 15 Days | Full feature access, no credit card required |
+| **1-Year Starter** | Rs. 1,999 / Year | 365 Days | Single counter setup, full updates and support |
+| **Lifetime Pro (Most Popular)** | Rs. 4,999 (One-Time) | Perpetual | Lifetime activation, 100% offline, free remote setup |
+
+To activate a license or request a multi-counter quote, contact directly:
+* Email: [vastraflow.sales@gmail.com](mailto:vastraflow.sales@gmail.com)
+* License Requests: Send your Machine ID (HWID), Shop Name, and contact details to [vastraflow.sales@gmail.com](mailto:vastraflow.sales@gmail.com)
+
+---
+
 ## License and Copyright
 
 Copyright (C) 2026 Aman Vishwakarma. All rights reserved.  
