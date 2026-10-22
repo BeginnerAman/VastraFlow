@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VastraFlow : Retail Clothing Shop POS &amp; Inventory Management Software</title>
+  <meta name="description" content="VastraFlow is a 100% offline retail POS, barcode billing, and inventory management software designed specifically for clothing stores, saree showrooms, and readymade garment shops in India.">
+  <meta name="keywords" content="clothing shop software, retail pos india, garment shop billing software, saree shop pos, offline billing software, barcode tag generator, udhar khata software">
+  <meta name="author" content="Aman Vishwakarma">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="VastraFlow : Retail Clothing Shop Management Software">
+  <meta property="og:description" content="100% Offline, high-speed POS billing, size and color matrix, barcode stickers, and udhar ledger for Indian clothing stores.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/img/app_icon_512.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/app_icon_32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/img/app_icon_16.png">
+  <link rel="shortcut icon" href="assets/img/app_icon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-logo" aria-label="VastraFlow Home">
+        <div class="brand-icon">
+          <img src="assets/img/app_icon.svg" alt="VastraFlow Logo" width="26" height="26">
+        </div>
+        <span>VastraFlow</span>
+        <span class="brand-badge">v3.0.0</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#features" class="nav-link"><i data-lucide="sparkles"></i> Features</a></li>
+          <li><a href="#showcase" class="nav-link"><i data-lucide="monitor"></i> App Tour</a></li>
+          <li><a href="#comparison" class="nav-link"><i data-lucide="shield-check"></i> Why VastraFlow</a></li>
+          <li><a href="#hardware" class="nav-link"><i data-lucide="printer"></i> Hardware</a></li>
+          <li><a href="#hotkeys" class="nav-link"><i data-lucide="keyboard"></i> Hotkeys</a></li>
+          <li><a href="manual.html" class="nav-link"><i data-lucide="book-open"></i> User Manual</a></li>
+          <li><a href="#faq" class="nav-link"><i data-lucide="help-circle"></i> FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/BeginnerAman/VastraFlow/releases/download/v3.0.0/VastraFlow_Setup_v3.0.exe" class="btn btn-primary btn-sm js-download-btn">
+          <i data-lucide="download"></i> Download Setup
+        </a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Navigation">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="pill-badge">
+        <i data-lucide="sparkles"></i>
+        <span>VastraFlow v3.0.0 Production Release : Built for Indian Garment Stores</span>
+      </div>
+
+      <h1 class="hero-title">
+        Dukaan Ka Har Hisaab, <br>
+        <span class="text-gradient">Ab Ungliyon Par</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Say goodbye to messy paper bahi-khatas and slow cloud tools. Manage size and color variants, print barcode tag stickers, scan bills in seconds, track customer udhar, and generate GST invoices. 100% Offline with zero internet dependency.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="https://github.com/BeginnerAman/VastraFlow/releases/download/v3.0.0/VastraFlow_Setup_v3.0.exe" class="btn btn-primary btn-lg js-download-btn">
+          <i data-lucide="download"></i> Download for Windows (v3.0.0)
+        </a>
+        <a href="manual.html" class="btn btn-secondary btn-lg">
+          <i data-lucide="book-open"></i> Open User Manual (यूजर गाइड)
+        </a>
+      </div>
+
+      <div class="hero-highlights">
+        <div class="highlight-item">
+          <i data-lucide="wifi-off"></i>
+          <span>100% Offline Freedom</span>
+        </div>
+        <div class="highlight-item">
+          <i data-lucide="calendar"></i>
+          <span>15-Day Full Free Trial</span>
+        </div>
+        <div class="highlight-item">
+          <i data-lucide="check-circle-2"></i>
+          <span>Windows 10 and 11 Ready</span>
+        </div>
+        <div class="highlight-item">
+          <i data-lucide="printer"></i>
+          <span>80mm Thermal and A4 Laser Ready</span>
+        </div>
+      </div>
+
+      <!-- Interactive App Showcase Frame -->
+      <div class="app-showcase-wrapper" id="showcase">
+        <div class="mockup-window-header">
+          <div class="window-dots">
+            <span class="window-dot dot-red"></span>
+            <span class="window-dot dot-amber"></span>
+            <span class="window-dot dot-green"></span>
+          </div>
+          <div class="mockup-tabs">
+            <button class="mockup-tab-btn active" data-target="screenBilling">
+              <i data-lucide="receipt"></i> POS Counter Billing
+            </button>
+            <button class="mockup-tab-btn" data-target="screenVariants">
+              <i data-lucide="layers"></i> Size and Color Matrix
+            </button>
+            <button class="mockup-tab-btn" data-target="screenBarcode">
+              <i data-lucide="barcode"></i> Barcode Stickers
+            </button>
+            <button class="mockup-tab-btn" data-target="screenKhata">
+              <i data-lucide="users"></i> Customer Udhar Khata
+            </button>
+            <button class="mockup-tab-btn" data-target="screenAnalytics">
+              <i data-lucide="bar-chart-3"></i> Accrual Profit and Loss
+            </button>
+          </div>
+        </div>
+
+        <div class="mockup-window-body">
+          <!-- Screen 1: POS Billing -->
+          <div class="mockup-screen active" id="screenBilling">
+            <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; text-align: left;">
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 16px; margin-bottom: 20px;">
+                <div>
+                  <h4 style="font-size: 1.15rem; color: #f8fafc; display: flex; align-items: center; gap: 8px;">
+                    <i data-lucide="shopping-cart" style="color: var(--primary);"></i> Counter POS Billing : INV-2026-0142
+                  </h4>
+                  <p style="font-size: 0.85rem; color: var(--text-muted);">Walk-in Customer : Payment Method: Cash / UPI Split</p>
+                </div>
+                <span style="background: rgba(16, 185, 129, 0.2); color: #34d399; padding: 4px 12px; border-radius: 9999px; font-weight: 700; font-size: 0.85rem; border: 1px solid rgba(16, 185, 129, 0.3);">
+                  System Online (Localhost)
+                </span>
+              </div>
+
+              <div style="overflow-x: auto; margin-bottom: 20px;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.9rem;">
+                  <thead>
+                    <tr style="color: var(--text-muted); border-bottom: 1px solid var(--border-subtle); text-align: left;">
+                      <th style="padding: 10px;">Item Description</th>
+                      <th style="padding: 10px;">Size / Color</th>
+                      <th style="padding: 10px;">Qty</th>
+                      <th style="padding: 10px;">MRP</th>
+                      <th style="padding: 10px;">Discount</th>
+                      <th style="padding: 10px; text-align: right;">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #f8fafc;">
+                      <td style="padding: 12px 10px; font-weight: 600;">Men Slim Fit Cotton Shirt</td>
+                      <td style="padding: 12px 10px;"><span style="background: rgba(99, 102, 241, 0.2); color: #c7d2fe; padding: 2px 8px; border-radius: 4px;">40 / Navy Blue</span></td>
+                      <td style="padding: 12px 10px;">2</td>
+                      <td style="padding: 12px 10px;">Rs. 1,499.00</td>
+                      <td style="padding: 12px 10px; color: #34d399;">Rs. 200.00</td>
+                      <td style="padding: 12px 10px; text-align: right; font-weight: 700;">Rs. 2,598.00</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #f8fafc;">
+                      <td style="padding: 12px 10px; font-weight: 600;">Pure Silk Banarasi Saree</td>
+                      <td style="padding: 12px 10px;"><span style="background: rgba(244, 63, 94, 0.2); color: #fecdd3; padding: 2px 8px; border-radius: 4px;">Free Size / Maroon</span></td>
+                      <td style="padding: 12px 10px;">1</td>
+                      <td style="padding: 12px 10px;">Rs. 4,999.00</td>
+                      <td style="padding: 12px 10px; color: #34d399;">Rs. 500.00</td>
+                      <td style="padding: 12px 10px; text-align: right; font-weight: 700;">Rs. 4,499.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(6, 9, 17, 0.8); padding: 16px 20px; border-radius: 8px; border: 1px solid var(--border-subtle); flex-wrap: wrap; gap: 14px;">
+                <div style="display: flex; gap: 10px;">
+                  <span style="font-size: 0.85rem; color: var(--text-muted);"><kbd class="kbd">F8</kbd> Cash</span>
+                  <span style="font-size: 0.85rem; color: var(--text-muted);"><kbd class="kbd">F9</kbd> UPI</span>
+                  <span style="font-size: 0.85rem; color: var(--text-muted);"><kbd class="kbd">Ctrl+P</kbd> Print</span>
+                </div>
+                <div style="text-align: right;">
+                  <span style="font-size: 0.85rem; color: var(--text-muted); margin-right: 12px;">Total Billed Amount:</span>
+                  <span style="font-size: 1.4rem; font-weight: 800; color: #38bdf8;">Rs. 7,097.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 2: Variants Matrix -->
+          <div class="mockup-screen" id="screenVariants">
+            <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; text-align: left;">
+              <h4 style="font-size: 1.15rem; color: #f8fafc; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                <i data-lucide="layers" style="color: var(--primary);"></i> Variant Inventory Ledger : Size and Color Combinations
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">
+                Every garment variant is independently tracked by SKU, reorder threshold, MRP, and real stock units.
+              </p>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+                <div style="background: rgba(6, 9, 17, 0.8); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px;">
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">SKU: SHT-SLIM-38-BLU</div>
+                  <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; margin: 4px 0;">Size 38 : Sky Blue</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="color: #34d399; font-weight: 700; font-size: 0.9rem;">14 in Stock</span>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">MRP: Rs. 1,499</span>
+                  </div>
+                </div>
+
+                <div style="background: rgba(6, 9, 17, 0.8); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px;">
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">SKU: SHT-SLIM-40-BLU</div>
+                  <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; margin: 4px 0;">Size 40 : Sky Blue</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="color: #fbbf24; font-weight: 700; font-size: 0.9rem;">2 left (Low Stock)</span>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">MRP: Rs. 1,499</span>
+                  </div>
+                </div>
+
+                <div style="background: rgba(6, 9, 17, 0.8); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px;">
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">SKU: SHT-SLIM-42-BLK</div>
+                  <div style="font-size: 1rem; font-weight: 700; color: #f8fafc; margin: 4px 0;">Size 42 : Black</div>
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="color: #f87171; font-weight: 700; font-size: 0.9rem;">0 Units (Out of Stock)</span>
+                    <span style="font-size: 0.8rem; color: var(--text-muted);">MRP: Rs. 1,599</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 3: Barcode Stickers -->
+          <div class="mockup-screen" id="screenBarcode">
+            <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; text-align: left;">
+              <h4 style="font-size: 1.15rem; color: #f8fafc; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                <i data-lucide="barcode" style="color: var(--primary);"></i> Garment Barcode Tag Sticker Printing
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">
+                Print crisp 50mm x 25mm garment tag stickers ready to attach to shirts, kurtis, jeans, and sarees.
+              </p>
+
+              <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                <div style="width: 240px; background: #ffffff; color: #000000; border-radius: 6px; padding: 14px; text-align: center; box-shadow: 0 8px 20px rgba(0,0,0,0.4); font-family: sans-serif;">
+                  <div style="font-weight: 800; font-size: 0.95rem; text-transform: uppercase;">SHREE TEXTILES</div>
+                  <div style="font-size: 0.75rem; color: #444; margin-bottom: 4px;">Men Slim Cotton Shirt</div>
+                  <div style="font-size: 0.8rem; font-weight: 700;">SIZE: 40 | NAVY BLUE</div>
+                  <div style="margin: 8px 0; display: flex; justify-content: center;">
+                    <svg viewBox="0 0 100 28" width="160" height="42">
+                      <rect x="0" y="0" width="3" height="28" fill="#000"/>
+                      <rect x="5" y="0" width="2" height="28" fill="#000"/>
+                      <rect x="10" y="0" width="4" height="28" fill="#000"/>
+                      <rect x="16" y="0" width="1" height="28" fill="#000"/>
+                      <rect x="20" y="0" width="5" height="28" fill="#000"/>
+                      <rect x="27" y="0" width="2" height="28" fill="#000"/>
+                      <rect x="31" y="0" width="4" height="28" fill="#000"/>
+                      <rect x="38" y="0" width="3" height="28" fill="#000"/>
+                      <rect x="44" y="0" width="1" height="28" fill="#000"/>
+                      <rect x="48" y="0" width="4" height="28" fill="#000"/>
+                      <rect x="55" y="0" width="2" height="28" fill="#000"/>
+                      <rect x="60" y="0" width="5" height="28" fill="#000"/>
+                      <rect x="68" y="0" width="2" height="28" fill="#000"/>
+                      <rect x="73" y="0" width="3" height="28" fill="#000"/>
+                      <rect x="79" y="0" width="4" height="28" fill="#000"/>
+                      <rect x="86" y="0" width="2" height="28" fill="#000"/>
+                      <rect x="91" y="0" width="3" height="28" fill="#000"/>
+                    </svg>
+                  </div>
+                  <div style="font-size: 0.75rem; font-family: monospace; letter-spacing: 1px;">SHT-SLIM-40-NVY</div>
+                  <div style="font-size: 1.1rem; font-weight: 800; margin-top: 4px; color: #000;">MRP: Rs. 1,499.00</div>
+                  <div style="font-size: 0.65rem; color: #666;">(Incl. of all taxes)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 4: Customer Udhar Khata -->
+          <div class="mockup-screen" id="screenKhata">
+            <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; text-align: left;">
+              <h4 style="font-size: 1.15rem; color: #f8fafc; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                <i data-lucide="book-marked" style="color: var(--primary);"></i> Customer Udhar Khata : Ramesh Kumar (+91 98765 43210)
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">
+                Automatic credit ledger tracking. Every credit sale increments the balance; collections decrement it with zero double-counting.
+              </p>
+
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px;">
+                <div style="background: rgba(6, 9, 17, 0.8); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Total Billed Purchases</div>
+                  <div style="font-size: 1.25rem; font-weight: 700; color: #f8fafc;">Rs. 24,500.00</div>
+                </div>
+                <div style="background: rgba(6, 9, 17, 0.8); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Total Payments Made</div>
+                  <div style="font-size: 1.25rem; font-weight: 700; color: #34d399;">Rs. 21,000.00</div>
+                </div>
+                <div style="background: rgba(6, 9, 17, 0.8); padding: 14px; border-radius: 8px; border: 1px solid rgba(244, 63, 94, 0.3);">
+                  <div style="font-size: 0.8rem; color: #fca5a5;">Current Outstanding Due</div>
+                  <div style="font-size: 1.25rem; font-weight: 800; color: #f87171;">Rs. 3,500.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Screen 5: Accrual Profit and Loss -->
+          <div class="mockup-screen" id="screenAnalytics">
+            <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-subtle); border-radius: 12px; padding: 24px; text-align: left;">
+              <h4 style="font-size: 1.15rem; color: #f8fafc; margin-bottom: 6px; display: flex; align-items: center; gap: 8px;">
+                <i data-lucide="trending-up" style="color: var(--primary);"></i> Accrual Profit &amp; Loss Engine
+              </h4>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">
+                Mathematically defensible accounting: Revenue is not Cash; Purchases are not COGS.
+              </p>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px;">
+                <div style="background: rgba(6, 9, 17, 0.8); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Net Sales Revenue</div>
+                  <div style="font-size: 1.2rem; font-weight: 700; color: #f8fafc;">Rs. 1,48,250.00</div>
+                </div>
+                <div style="background: rgba(6, 9, 17, 0.8); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Net COGS (Sold Goods)</div>
+                  <div style="font-size: 1.2rem; font-weight: 700; color: #94a3b8;">Rs. 88,400.00</div>
+                </div>
+                <div style="background: rgba(6, 9, 17, 0.8); padding: 14px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">Gross Trading Profit</div>
+                  <div style="font-size: 1.2rem; font-weight: 700; color: #38bdf8;">Rs. 59,850.00</div>
+                </div>
+                <div style="background: rgba(6, 9, 17, 0.8); padding: 14px; border-radius: 8px; border: 1px solid rgba(16, 185, 129, 0.3);">
+                  <div style="font-size: 0.8rem; color: #86efac;">Net Operating Profit</div>
+                  <div style="font-size: 1.2rem; font-weight: 800; color: #34d399;">Rs. 44,200.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Grid -->
+  <section class="section-wrapper" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Engineered for Apparel Retail</span>
+        <h2 class="section-title">Built Specifically for Clothing Showrooms</h2>
+        <p class="section-desc">
+          Every feature in VastraFlow addresses a real-world problem faced on the shop floor: sizes, colors, barcode tags, customer exchanges, and udhar bahi-khata.
+        </p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-box-indigo">
+            <i data-lucide="zap"></i>
+          </div>
+          <h3>Lightning-Fast Counter POS</h3>
+          <p>
+            Scan barcodes or search products instantly. Designed for rush hours with keyboard hotkeys, cash drawer change calculation, and split payment modes (Cash, UPI, Card, Udhar).
+          </p>
+          <ul class="feature-pill-list">
+            <li class="feature-pill">Barcode Scanning</li>
+            <li class="feature-pill">Split Payments</li>
+            <li class="feature-pill">Item &amp; Bill Discounts</li>
+          </ul>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-box-emerald">
+            <i data-lucide="layers"></i>
+          </div>
+          <h3>Size and Color Variant Matrix</h3>
+          <p>
+            One product, multiple stockable units. Track exact stock per size (38, 40, 42, XL, XXL) and color (Blue, Olive, Maroon) with individual reorder thresholds.
+          </p>
+          <ul class="feature-pill-list">
+            <li class="feature-pill">SKU Auto-Generation</li>
+            <li class="feature-pill">Low Stock Alerts</li>
+            <li class="feature-pill">Dead Stock Analysis</li>
+          </ul>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-box-amber">
+            <i data-lucide="barcode"></i>
+          </div>
+          <h3>Garment Barcode Tag Printing</h3>
+          <p>
+            Generate and print crisp Code-128 barcode stickers ready for standard label printers. Print single tags or batch print entire lots with your shop name, size, and MRP.
+          </p>
+          <ul class="feature-pill-list">
+            <li class="feature-pill">50x25mm Label Ready</li>
+            <li class="feature-pill">Custom Shop Header</li>
+            <li class="feature-pill">SVG Vector Barcodes</li>
+          </ul>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-box-cyan">
+            <i data-lucide="printer"></i>
+          </div>
+          <h3>Thermal POS &amp; A4 PDF Invoices</h3>
+          <p>
+            Support for high-speed 80mm thermal receipts with auto-cut, plus publication-quality A4 tax invoices with custom shop headers, GSTIN, and return policies.
+          </p>
+          <ul class="feature-pill-list">
+            <li class="feature-pill">80mm / 58mm Thermal</li>
+            <li class="feature-pill">ReportLab A4 PDF</li>
+            <li class="feature-pill">Direct Windows Print</li>
+          </ul>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-box-rose">
+            <i data-lucide="repeat"></i>
+          </div>
+          <h3>Returns and Size Exchanges</h3>
+          <p>
+            Process customer returns and size exchanges in a single transaction. Automatic restock or damage classification with zero-drift proportional discount reconciliation.
+          </p>
+          <ul class="feature-pill-list">
+            <li class="feature-pill">Restock vs Damaged</li>
+            <li class="feature-pill">Single-Bill Exchange</li>
+            <li class="feature-pill">Refund / Credit Notes</li>
+          </ul>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="feature-card">
+          <div class="feature-icon-box icon-box-purple">
+            <i data-lucide="lock"></i>
+          </div>
+          <h3>Staff Roles &amp; Price Privacy</h3>
+          <p>
+            Separate Admin and Cashier accounts. Counter staff can bill and check stock, but wholesale purchase costs and supplier debts remain strictly hidden.
+          </p>
+          <ul class="feature-pill-list">
+            <li class="feature-pill">Owner vs Staff Role</li>
+            <li class="feature-pill">Cost Price Masking</li>
+            <li class="feature-pill">Security Audit Logs</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table Section -->
+  <section class="section-wrapper" id="comparison">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Comparison</span>
+        <h2 class="section-title">Why VastraFlow is the Smart Choice</h2>
+        <p class="section-desc">
+          Compare VastraFlow with traditional manual bahi-khata registers and generic monthly cloud subscriptions.
+        </p>
+      </div>
+
+      <div class="comparison-container">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="width: 34%;">Feature / Capability</th>
+              <th style="width: 22%;">Manual Bahi-Khata</th>
+              <th style="width: 22%;">Generic Cloud SaaS</th>
+              <th style="width: 22%;" class="highlight-col">VastraFlow Desktop</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="table-feature-title">
+                  <i data-lucide="wifi" style="color: var(--primary);"></i> Internet Independence
+                </div>
+              </td>
+              <td><span class="badge-check"><i data-lucide="check"></i> 100% Offline</span></td>
+              <td><span class="badge-cross"><i data-lucide="x"></i> Fails on Internet Cut</span></td>
+              <td class="highlight-col"><span class="badge-check"><i data-lucide="check"></i> 100% Offline Engine</span></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="table-feature-title">
+                  <i data-lucide="credit-card" style="color: var(--primary);"></i> Monthly Rental Trap
+                </div>
+              </td>
+              <td><span class="badge-check"><i data-lucide="check"></i> Zero Fees</span></td>
+              <td><span class="badge-cross"><i data-lucide="x"></i> Forced Monthly Fees</span></td>
+              <td class="highlight-col"><span class="badge-check"><i data-lucide="check"></i> Transparent Pricing</span></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="table-feature-title">
+                  <i data-lucide="tag" style="color: var(--primary);"></i> Size and Color Matrix
+                </div>
+              </td>
+              <td><span class="badge-cross"><i data-lucide="x"></i> Very Difficult</span></td>
+              <td><span class="badge-cross"><i data-lucide="x"></i> Generic / Clunky</span></td>
+              <td class="highlight-col"><span class="badge-check"><i data-lucide="check"></i> Native Apparel Matrix</span></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="table-feature-title">
+                  <i data-lucide="barcode" style="color: var(--primary);"></i> Garment Barcode Sticker Tags
+                </div>
+              </td>
+              <td><span class="badge-cross"><i data-lucide="x"></i> Not Possible</span></td>
+              <td><span class="badge-cross"><i data-lucide="x"></i> Paid Extra Plugin</span></td>
+              <td class="highlight-col"><span class="badge-check"><i data-lucide="check"></i> Built-in Tag Generator</span></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="table-feature-title">
+                  <i data-lucide="shield" style="color: var(--primary);"></i> Wholesale Cost Privacy
+                </div>
+              </td>
+              <td><span class="badge-cross"><i data-lucide="x"></i> Diaries Visible</span></td>
+              <td><span class="badge-cross"><i data-lucide="x"></i> Often Leaked</span></td>
+              <td class="highlight-col"><span class="badge-check"><i data-lucide="check"></i> Strict Staff Masking</span></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="table-feature-title">
+                  <i data-lucide="database" style="color: var(--primary);"></i> Data Privacy &amp; Ownership
+                </div>
+              </td>
+              <td><span class="badge-cross"><i data-lucide="x"></i> Fire / Loss Risk</span></td>
+              <td><span class="badge-cross"><i data-lucide="x"></i> On Remote Servers</span></td>
+              <td class="highlight-col"><span class="badge-check"><i data-lucide="check"></i> 100% on Your PC</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hardware Compatibility -->
+  <section class="section-wrapper" id="hardware">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Plug and Play</span>
+        <h2 class="section-title">Hardware You Can Use Today</h2>
+        <p class="section-desc">
+          No special proprietary hardware required. VastraFlow works seamlessly with your existing desktop, laptop, thermal printers, and barcode scanners.
+        </p>
+      </div>
+
+      <div class="hardware-grid">
+        <div class="hardware-card">
+          <div class="hardware-icon">
+            <i data-lucide="scan" style="width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Barcode Scanners</h3>
+          <p>Any standard USB or Wireless 1D/2D handheld barcode scanner. Just plug in and scan.</p>
+        </div>
+
+        <div class="hardware-card">
+          <div class="hardware-icon">
+            <i data-lucide="printer" style="width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Thermal POS Printers</h3>
+          <p>Standard 80mm (3-inch) or 58mm (2-inch) thermal receipt printers (TVS, Epson, NGX, POSIFLEX).</p>
+        </div>
+
+        <div class="hardware-card">
+          <div class="hardware-icon">
+            <i data-lucide="file-text" style="width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Laser and Inkjet Printers</h3>
+          <p>Any regular A4 or A5 desktop printer (HP, Canon, Brother, Epson) for crisp full-page tax invoices.</p>
+        </div>
+
+        <div class="hardware-card">
+          <div class="hardware-icon">
+            <i data-lucide="monitor" style="width: 32px; height: 32px;"></i>
+          </div>
+          <h3>Windows Computers</h3>
+          <p>Runs on Windows 10 and Windows 11 (64-bit). Works smoothly on budget laptops and POS terminals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hotkeys Cheat Sheet -->
+  <section class="section-wrapper" id="hotkeys">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Speed at the Counter</span>
+        <h2 class="section-title">Keyboard Hotkeys for Cashiers</h2>
+        <p class="section-desc">
+          Counter staff can complete billing, apply discounts, select payment modes, and print receipts without ever touching the mouse.
+        </p>
+      </div>
+
+      <div class="hotkeys-card">
+        <div class="hotkeys-grid">
+          <div class="hotkey-item">
+            <span>New Sale Billing</span>
+            <kbd class="kbd">F2</kbd>
+          </div>
+          <div class="hotkey-item">
+            <span>Add Item Row</span>
+            <kbd class="kbd">F4</kbd>
+          </div>
+          <div class="hotkey-item">
+            <span>Customer Selection</span>
+            <kbd class="kbd">F6</kbd>
+          </div>
+          <div class="hotkey-item">
+            <span>Pay Full Cash</span>
+            <kbd class="kbd">F8</kbd>
+          </div>
+          <div class="hotkey-item">
+            <span>Pay Full UPI</span>
+            <kbd class="kbd">F9</kbd>
+          </div>
+          <div class="hotkey-item">
+            <span>Print Invoice</span>
+            <kbd class="kbd">Ctrl + P</kbd>
+          </div>
+          <div class="hotkey-item">
+            <span>Quick Product Search</span>
+            <kbd class="kbd">Ctrl + F</kbd>
+          </div>
+          <div class="hotkey-item">
+            <span>Close / Cancel Dialog</span>
+            <kbd class="kbd">Esc</kbd>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section-wrapper" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Questions and Answers</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-desc">
+          Common queries answered for shop owners and retail managers.
+        </p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>Kya VastraFlow bina internet ke chalega?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Haan, bilkul! VastraFlow 100% offline desktop software hai. Billing karne, barcode print karne, stock dekhne, aur reports nikaalne ke liye internet ki bilkul jaroorat nahi hoti. Aapka saara data aapke computer me rehta hai.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>15-day free trial ke baad kya hoga?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Trial period khatam hone par software Read-Only Mode (Soft-Lock) me chala jaata hai. Iska matlab aapka purana hisaab, pichle saare bills, stock aur reports bilkul safe rehte hain. Naya bill banane ke liye aapko software activate karna hota hai.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Kya purana product stock Excel se daal sakte hain?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Haan, VastraFlow me built-in Excel Import feature hai. Aap Product section se ready-made Excel template download karke apne saare kapdon ki list ek baar me upload kar sakte hain.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Dukaan ka data safe kaise rahega agar computer kharab ho jaye?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            VastraFlow me 1-Click Database Backup feature diya gaya hai. Aap roz raat ko dukan band karte waqt apne database ka snapshot copy Pen Drive ya external drive me save kar sakte hain aur naye PC par ek click me restore kar sakte hain.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Thermal printer aur barcode scanner connect kaise hoga?</span>
+            <i data-lucide="chevron-down" class="faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            Koi mushkil setup nahi hai. Standard USB Barcode Scanner ko direct USB port me lagate hi wo kaam shuru kar deta hai. Thermal printer ke liye Windows printer driver install karke VastraFlow ke Thermal Print button par click karein.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Download Banner -->
+  <section class="section-wrapper">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Start Managing Your Clothing Store Today</h2>
+        <p>
+          Download VastraFlow v3.0.0 and enjoy a full-featured 15-day trial. Setup takes less than 2 minutes on Windows 10 or 11.
+        </p>
+        <div class="hero-cta-group" style="margin-bottom: 0;">
+          <a href="https://github.com/BeginnerAman/VastraFlow/releases/download/v3.0.0/VastraFlow_Setup_v3.0.exe" class="btn btn-primary btn-lg js-download-btn">
+            <i data-lucide="download"></i> Download Setup Installer (.exe)
+          </a>
+          <a href="manual.html" class="btn btn-secondary btn-lg">
+            <i data-lucide="book-open"></i> Read Complete User Manual
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download Setup Modal -->
+  <div class="modal-overlay" id="downloadModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Dialog">
+        <i data-lucide="x"></i>
+      </button>
+
+      <div style="width: 56px; height: 56px; border-radius: 50%; background: rgba(16, 185, 129, 0.15); color: #34d399; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
+        <i data-lucide="check-circle" style="width: 32px; height: 32px;"></i>
+      </div>
+
+      <h3 id="modalTitle" style="font-size: 1.35rem; margin-bottom: 10px;">Downloading VastraFlow v3.0.0</h3>
+      <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 22px; line-height: 1.6;">
+        Your Windows setup package (VastraFlow_Setup_v3.0.exe) is downloading. Follow these quick steps to get started:
+      </p>
+
+      <div style="background: rgba(6, 9, 17, 0.7); border: 1px solid var(--border-subtle); border-radius: 8px; padding: 16px; text-align: left; font-size: 0.88rem; color: #cbd5e1; margin-bottom: 24px;">
+        <div style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <span style="background: var(--primary); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">1</span>
+          Open the downloaded setup file from your Downloads folder.
+        </div>
+        <div style="margin-bottom: 8px; display: flex; align-items: center; gap: 8px;">
+          <span style="background: var(--primary); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">2</span>
+          Click Next and follow the clean installation wizard.
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="background: var(--primary); color: #fff; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 700;">3</span>
+          Launch VastraFlow from your Desktop icon and start your 15-day trial!
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: center;">
+        <button class="btn btn-secondary btn-sm" id="modalDismissBtn">Got It</button>
+        <a href="manual.html" class="btn btn-primary btn-sm">Read User Manual</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="brand-icon">
+              <img src="assets/img/app_icon.svg" alt="VastraFlow Logo" width="24" height="24">
+            </div>
+            <span>VastraFlow</span>
+          </div>
+          <p>
+            The dedicated offline POS and retail management system created for Indian clothing showrooms, saree houses, and readymade garment shops.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="#features">Key Features</a></li>
+              <li><a href="#showcase">App Showcase</a></li>
+              <li><a href="#comparison">Why VastraFlow</a></li>
+              <li><a href="#hardware">Supported Hardware</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Documentation</h4>
+            <ul>
+              <li><a href="manual.html">Complete User Manual</a></li>
+              <li><a href="#hotkeys">Counter Hotkeys</a></li>
+              <li><a href="#faq">Frequently Asked Questions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Download &amp; Repo</h4>
+            <ul>
+              <li><a href="https://github.com/BeginnerAman/VastraFlow/releases/download/v3.0.0/VastraFlow_Setup_v3.0.exe">Download v3.0 Setup (.exe)</a></li>
+              <li><a href="https://github.com/BeginnerAman/VastraFlow">GitHub Repository</a></li>
+              <li><a href="https://github.com/BeginnerAman/VastraFlow/releases">All Releases</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          Copyright &copy; 2026 Aman Vishwakarma. All rights reserved.
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <i data-lucide="shield-check" style="color: var(--accent-emerald);"></i>
+          <span>Engineered with Precision for Indian Retailers</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lucide Icons Script (Local with CDN fallback) -->
+  <script src="assets/vendor/lucide/lucide.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Main Script -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="hi" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VastraFlow - Complete User Manual &amp; Training Guide (यूजर गाइड)</title>
+    <!-- Google Fonts for crisp Hindi and English typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ==========================================================================
+           VastraFlow Signature Theme: Obsidian Dark Glassmorphism + Light Mode
+           ========================================================================== */
+        :root {
+            --bg-page: #060911;
+            --bg-surface: rgba(15, 23, 42, 0.75);
+            --bg-card: rgba(15, 23, 42, 0.85);
+            --bg-subtle: rgba(30, 41, 59, 0.65);
+            --bg-input: rgba(15, 23, 42, 0.95);
+            --border: rgba(255, 255, 255, 0.10);
+            --border-subtle: rgba(255, 255, 255, 0.06);
+            --border-hover: rgba(99, 102, 241, 0.4);
+            
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --text-subtle: #64748b;
+            
+            --primary: #6366f1;
+            --primary-hover: #4f46e5;
+            --primary-light: rgba(99, 102, 241, 0.16);
+            --primary-border: rgba(99, 102, 241, 0.35);
+            --primary-glow: 0 4px 20px rgba(99, 102, 241, 0.35);
+
+            --success: #10b981;
+            --success-light: rgba(16, 185, 129, 0.16);
+            --success-border: rgba(16, 185, 129, 0.35);
+            
+            --warning: #f59e0b;
+            --warning-light: rgba(245, 158, 11, 0.16);
+            --warning-border: rgba(245, 158, 11, 0.35);
+            
+            --danger: #ef4444;
+            --danger-light: rgba(239, 68, 68, 0.16);
+            --danger-border: rgba(239, 68, 68, 0.35);
+
+            --info: #0ea5e9;
+            --info-light: rgba(14, 165, 233, 0.16);
+            --info-border: rgba(14, 165, 233, 0.35);
+
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 14px;
+            --radius-xl: 20px;
+            --radius-full: 9999px;
+
+            --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.5);
+            --shadow-popup: 0 20px 45px rgba(0, 0, 0, 0.7);
+            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        [data-theme="light"] {
+            --bg-page: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-card: #ffffff;
+            --bg-subtle: #f1f5f9;
+            --bg-input: #ffffff;
+            --border: #e2e8f0;
+            --border-subtle: #cbd5e1;
+            --border-hover: #6366f1;
+            
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-subtle: #64748b;
+            
+            --primary: #4f46e5;
+            --primary-hover: #4338ca;
+            --primary-light: #eef2ff;
+            --primary-border: #c7d2fe;
+            --primary-glow: 0 4px 15px rgba(79, 70, 229, 0.2);
+
+            --success: #16a34a;
+            --success-light: #f0fdf4;
+            --success-border: #bbf7d0;
+            
+            --warning: #d97706;
+            --warning-light: #fffbeb;
+            --warning-border: #fde68a;
+            
+            --danger: #dc2626;
+            --danger-light: #fef2f2;
+            --danger-border: #fecaca;
+
+            --info: #0284c7;
+            --info-light: #f0f9ff;
+            --info-border: #bae6fd;
+
+            --shadow-card: 0 4px 15px rgba(0, 0, 0, 0.05);
+            --shadow-popup: 0 12px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-page);
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.12) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(14, 165, 233, 0.10) 0px, transparent 50%),
+                radial-gradient(at 50% 100%, rgba(16, 185, 129, 0.06) 0px, transparent 50%);
+            background-attachment: fixed;
+            color: var(--text-main);
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Header Sticky Bar */
+        .top-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(6, 9, 17, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 0;
+            transition: var(--transition);
+        }
+
+        [data-theme="light"] .top-header {
+            background: rgba(255, 255, 255, 0.92);
+        }
+
+        .header-container {
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .brand-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .brand-logo-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-md);
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.4);
+        }
+
+        .brand-text h1 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-main);
+        }
+
+        .brand-text p {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .header-search-box {
+            flex: 1;
+            max-width: 460px;
+            position: relative;
+        }
+
+        .header-search-input {
+            width: 100%;
+            background: var(--bg-input);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-full);
+            padding: 10px 18px 10px 42px;
+            font-size: 0.9rem;
+            color: var(--text-main);
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .header-search-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+        }
+
+        .header-search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 18px;
+            height: 18px;
+            color: var(--text-subtle);
+            pointer-events: none;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: var(--radius-md);
+            border: 1px solid transparent;
+            cursor: pointer;
+            text-decoration: none;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border-color: var(--border);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-subtle);
+            border-color: var(--border-hover);
+        }
+
+        .btn-sm {
+            padding: 5px 12px;
+            font-size: 0.78rem;
+        }
+
+        /* Hero Banner */
+        .hero {
+            padding: 40px 24px 30px;
+            background: linear-gradient(180deg, rgba(99, 102, 241, 0.10) 0%, transparent 100%);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .hero-container {
+            max-width: 1340px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: var(--radius-full);
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            color: var(--primary);
+            font-size: 0.78rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            line-height: 1.25;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 50%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        [data-theme="light"] .hero-title span {
+            background: linear-gradient(135deg, #4f46e5 0%, #0284c7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            line-height: 1.6;
+        }
+
+        .hero-stats-grid {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 14px 20px;
+            min-width: 140px;
+            box-shadow: var(--shadow-card);
+            backdrop-filter: blur(12px);
+        }
+
+        .hero-stat-card .val {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .hero-stat-card .lbl {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* Filter Tabs */
+        .category-filter-nav {
+            max-width: 1340px;
+            margin: 20px auto 0;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            overflow-x: auto;
+            padding-bottom: 8px;
+        }
+
+        .filter-tab-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-full);
+            padding: 8px 18px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .filter-tab-btn:hover {
+            border-color: var(--border-hover);
+            color: var(--text-main);
+        }
+
+        .filter-tab-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(99, 102, 241, 0.35);
+        }
+
+        /* Main Layout */
+        .manual-wrapper {
+            max-width: 1340px;
+            margin: 28px auto 60px;
+            padding: 0 24px;
+            display: grid;
+            grid-template-columns: 290px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        /* Sticky Sidebar Navigation */
+        .sidebar {
+            position: sticky;
+            top: 76px;
+            max-height: calc(100vh - 100px);
+            overflow-y: auto;
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 18px 14px;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow-card);
+        }
+
+        .sidebar-title {
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-subtle);
+            padding: 8px 12px 6px;
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 9px 12px;
+            border-radius: var(--radius-md);
+            font-size: 0.86rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            background: var(--bg-subtle);
+            color: var(--text-main);
+            transform: translateX(3px);
+        }
+
+        .nav-link.active {
+            background: var(--primary-light);
+            color: var(--primary);
+            border: 1px solid var(--primary-border);
+            font-weight: 700;
+        }
+
+        .nav-link svg {
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+        }
+
+        .nav-pill-count {
+            margin-left: auto;
+            font-size: 0.72rem;
+            background: var(--bg-subtle);
+            padding: 2px 7px;
+            border-radius: var(--radius-full);
+            color: var(--text-subtle);
+        }
+
+        /* Content Area */
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+        }
+
+        /* Section Container */
+        .manual-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            box-shadow: var(--shadow-card);
+            backdrop-filter: blur(16px);
+            position: relative;
+            scroll-margin-top: 86px;
+            transition: var(--transition);
+        }
+
+        .manual-section:hover {
+            border-color: var(--border-hover);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 22px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-subtle);
+            flex-wrap: wrap;
+        }
+
+        .section-badge-id {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--primary);
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            padding: 3px 10px;
+            border-radius: var(--radius-full);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-size: 1.55rem;
+            font-weight: 800;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title svg {
+            width: 28px;
+            height: 28px;
+            color: var(--primary);
+        }
+
+        .section-desc-hinglish {
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+            line-height: 1.6;
+        }
+
+        .section-desc-hinglish strong {
+            color: var(--text-main);
+        }
+
+        /* Workflow Step Cards */
+        .step-cards-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .step-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 18px 22px;
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+            transition: var(--transition);
+        }
+
+        .step-card:hover {
+            border-color: var(--primary-border);
+            background: rgba(99, 102, 241, 0.05);
+            transform: translateX(4px);
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            border-radius: var(--radius-md);
+            background: var(--primary);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.35);
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 4px;
+        }
+
+        .step-text {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* Info Alert Boxes */
+        .callout {
+            border-radius: var(--radius-lg);
+            padding: 16px 20px;
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .callout-icon {
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .callout-tip {
+            background: var(--primary-light);
+            border: 1px solid var(--primary-border);
+            color: #c7d2fe;
+        }
+        [data-theme="light"] .callout-tip { color: #3730a3; }
+
+        .callout-success {
+            background: var(--success-light);
+            border: 1px solid var(--success-border);
+            color: #6ee7b7;
+        }
+        [data-theme="light"] .callout-success { color: #065f46; }
+
+        .callout-warning {
+            background: var(--warning-light);
+            border: 1px solid var(--warning-border);
+            color: #fde68a;
+        }
+        [data-theme="light"] .callout-warning { color: #92400e; }
+
+        .callout-danger {
+            background: var(--danger-light);
+            border: 1px solid var(--danger-border);
+            color: #fca5a5;
+        }
+        [data-theme="light"] .callout-danger { color: #991b1b; }
+
+        /* Keyboard Hotkey Badge */
+        .kbd-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 3px 8px;
+            background: rgba(99, 102, 241, 0.22);
+            border: 1px solid rgba(99, 102, 241, 0.45);
+            border-radius: var(--radius-sm);
+            color: #a5b4fc;
+            font-family: monospace, sans-serif;
+            font-weight: 700;
+            font-size: 0.82rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        [data-theme="light"] .kbd-badge {
+            background: #eef2ff;
+            border-color: #c7d2fe;
+            color: #4338ca;
+        }
+
+        /* Data Tables */
+        .table-responsive {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+        }
+
+        .manual-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.88rem;
+            text-align: left;
+        }
+
+        .manual-table th {
+            background: rgba(17, 24, 39, 0.94);
+            color: var(--text-main);
+            padding: 12px 16px;
+            font-weight: 700;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        [data-theme="light"] .manual-table th {
+            background: #f1f5f9;
+        }
+
+        .manual-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            vertical-align: middle;
+        }
+
+        .manual-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .manual-table tr:hover td {
+            background: var(--bg-subtle);
+            color: var(--text-main);
+        }
+
+        /* Hotkey Grid HUD */
+        .hotkeys-hud-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 14px;
+            margin: 20px 0;
+        }
+
+        .hotkey-card {
+            background: var(--bg-subtle);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 16px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .hotkey-card .info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hotkey-card .name {
+            font-weight: 700;
+            font-size: 0.92rem;
+            color: var(--text-main);
+        }
+
+        .hotkey-card .desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+        }
+
+        /* FAQ Accordion */
+        .faq-item {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            margin-bottom: 10px;
+            background: var(--bg-subtle);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-border);
+        }
+
+        .faq-question {
+            padding: 16px 20px;
+            font-weight: 700;
+            font-size: 0.98rem;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            user-select: none;
+        }
+
+        .faq-question svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.25s ease;
+            color: var(--primary);
+        }
+
+        .faq-item.open .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 20px 18px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            display: none;
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 4px;
+            padding-top: 14px;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* Floating Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            width: 46px;
+            height: 46px;
+            border-radius: var(--radius-full);
+            background: var(--primary);
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+            cursor: pointer;
+            border: none;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition);
+            z-index: 99;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-hover);
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            background: var(--bg-page);
+        }
+
+        .footer-credit {
+            margin-top: 10px;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .author-name-glow {
+            font-weight: 800;
+            background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 40%, #c084fc 70%, #38bdf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 12px rgba(129, 140, 248, 0.55));
+            letter-spacing: 0.02em;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .author-name-glow:hover {
+            filter: drop-shadow(0 0 16px rgba(168, 85, 247, 0.8));
+            transform: scale(1.03);
+        }
+
+        /* Print Media Styles */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+            }
+            .top-header, .sidebar, .header-search-box, .category-filter-nav, .back-to-top, .btn-print, .theme-toggle {
+                display: none !important;
+            }
+            .manual-wrapper {
+                grid-template-columns: 1fr !important;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            .manual-section {
+                border: 1px solid #ccc !important;
+                box-shadow: none !important;
+                background: #fff !important;
+                page-break-inside: avoid;
+                margin-bottom: 24px !important;
+                padding: 16px !important;
+            }
+            .step-card, .callout {
+                border: 1px solid #ddd !important;
+                background: #f9f9f9 !important;
+                color: #000 !important;
+            }
+            .step-number {
+                background: #000 !important;
+                color: #fff !important;
+            }
+            .section-title {
+                color: #000 !important;
+            }
+            .faq-answer {
+                display: block !important;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .manual-wrapper {
+                grid-template-columns: 1fr;
+            }
+            .sidebar {
+                display: none;
+            }
+            .hero-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Sticky Header -->
+    <header class="top-header">
+        <div class="header-container">
+            <a href="#" class="brand-group">
+                <div class="brand-logo-icon">
+                    <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <h1>VastraFlow <span>Manual</span></h1>
+                    <p>Clothing Shop Retail Management System</p>
+                </div>
+            </a>
+
+            <!-- Live Search Bar -->
+            <div class="header-search-box">
+                <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <input 
+                    type="text" 
+                    id="manualSearchInput" 
+                    class="header-search-input" 
+                    placeholder="Search manual (e.g., barcode, bill kaise banaye, exchange, khata, hotkeys)..."
+                    autocomplete="off"
+                >
+            </div>
+
+            <!-- Header Action Buttons -->
+            <div class="header-actions">
+                <button type="button" class="btn btn-outline theme-toggle" id="themeToggleBtn" title="Dark / Light Mode Toggle">
+                    <svg id="themeIcon" viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <span id="themeText">Theme</span>
+                </button>
+                <button type="button" class="btn btn-primary btn-print" onclick="window.print()">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                    <span>Print Manual</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-badge">Official Training Manual &amp; Operating Guide</span>
+                <h2 class="hero-title">VastraFlow chalane ka <span>A to Z Complete Guide</span></h2>
+                <p class="hero-subtitle">
+                    Clothing Shop Management Software ke sabhi features, fast barcode billing, stock inward, customer returns, udhar khata aur daily closing ko aasan bhasha (Simple English + Hinglish) mein samjhein.
+                </p>
+            </div>
+            <div class="hero-stats-grid">
+                <div class="hero-stat-card">
+                    <div class="val">14 Modules</div>
+                    <div class="lbl">Complete Coverage</div>
+                </div>
+                <div class="hero-stat-card">
+                    <div class="val">Zero Error</div>
+                    <div class="lbl">POS Hotkeys Ready</div>
+                </div>
+                <div class="hero-stat-card">
+                    <div class="val">100% Offline</div>
+                    <div class="lbl">Safe Local Data</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Filter Tabs -->
+    <div class="category-filter-nav">
+        <button class="filter-tab-btn active" data-filter="all">Sabhi Sections (All)</button>
+        <button class="filter-tab-btn" data-filter="billing">Counter &amp; Billing (POS)</button>
+        <button class="filter-tab-btn" data-filter="products">Products &amp; Stock</button>
+        <button class="filter-tab-btn" data-filter="purchases">Wholesale Purchases</button>
+        <button class="filter-tab-btn" data-filter="khata">Customer &amp; Supplier Khata</button>
+        <button class="filter-tab-btn" data-filter="admin">Admin, Reports &amp; Backups</button>
+    </div>
+
+    <!-- Main Content Container with Sidebar -->
+    <div class="manual-wrapper">
+        
+        <!-- Sticky Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-title">Quick Index (Index)</div>
+            <ul class="nav-list">
+                <li><a href="#sec-overview" class="nav-link active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+                    <span>1. Software Overview</span>
+                </a></li>
+                <li><a href="#sec-setup" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    <span>2. Shop Settings Setup</span>
+                </a></li>
+                <li><a href="#sec-categories-brands" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    <span>3. Categories &amp; Brands</span>
+                </a></li>
+                <li><a href="#sec-products" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    <span>4. Products &amp; Variants</span>
+                </a></li>
+                <li><a href="#sec-barcodes" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="8" x2="7" y2="16"/><line x1="11" y1="8" x2="11" y2="16"/><line x1="15" y1="8" x2="15" y2="16"/><line x1="17" y1="8" x2="17" y2="16"/></svg>
+                    <span>5. Barcode Tag Stickers</span>
+                </a></li>
+                <li><a href="#sec-purchases" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    <span>6. Wholesale Purchases</span>
+                </a></li>
+                <li><a href="#sec-pos-billing" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    <span>7. Counter POS Billing</span>
+                </a></li>
+                <li><a href="#sec-invoices" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                    <span>8. Bills &amp; Thermal Slips</span>
+                </a></li>
+                <li><a href="#sec-returns" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                    <span>9. Returns &amp; Exchange</span>
+                </a></li>
+                <li><a href="#sec-inventory" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                    <span>10. Inventory &amp; Adjustments</span>
+                </a></li>
+                <li><a href="#sec-khata" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    <span>11. Customer &amp; Supplier Khata</span>
+                </a></li>
+                <li><a href="#sec-expenses" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                    <span>12. Shop Daily Expenses</span>
+                </a></li>
+                <li><a href="#sec-reports" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    <span>13. Day Closing &amp; Reports</span>
+                </a></li>
+                <li><a href="#sec-backups" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                    <span>14. Backups &amp; Safety</span>
+                </a></li>
+                <li><a href="#sec-hotkeys" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6" y2="8"/><line x1="10" y1="8" x2="10" y2="8"/><line x1="14" y1="8" x2="14" y2="8"/><line x1="18" y1="8" x2="18" y2="8"/><line x1="6" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="18" y2="12"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+                    <span>15. Hotkeys HUD Reference</span>
+                </a></li>
+                <li><a href="#sec-faqs" class="nav-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <span>16. FAQs &amp; Help</span>
+                </a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Manual Content -->
+        <main class="content-area">
+
+            <!-- Section 1: Overview -->
+            <section id="sec-overview" class="manual-section" data-category="admin">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 01</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/></svg>
+                            VastraFlow Kya Hai &amp; Kaise Chalta Hai?
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    <strong>VastraFlow</strong> ek complete modern desktop management software hai jo khas taur par kapdon (Garments, Apparel, Fashion Retail &amp; Family Stores) ke hisab-kitab aur fast counter billing ke liye banaya gaya hai.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Desktop Window App (Offline First)</div>
+                            <div class="step-text">
+                                Ye software bina internet ke bhi 100% offline kaam karta hai. Data aapke computer mein hi surakshit rehta hai, kisi cloud ya external server par depend nahi karta.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Two User Roles: Admin vs Staff (Cashier)</div>
+                            <div class="step-text">
+                                <strong>Admin (Shop Owner):</strong> Sabhi reports, munafa (Profit/Loss), kharid bhav, manual stock change, aur dukan settings dekh sakta hai.<br>
+                                <strong>Staff (Cashier/Counter Boy):</strong> Sirf billing counter, sales history, customer return, aur stock count dekh sakta hai. Dukaan ka secret kharid bhav Staff ko nahi dikhta.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Smart Trial &amp; Permanent Activation</div>
+                            <div class="step-text">
+                                Software shuruat mein 15-day smart trial mode mein chalta hai. Permanent activation ke liye <strong>Admin ➔ License &amp; Activation</strong> menu se Hardware ID (HWID) copy karke official activation key paste kar sakte hain.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-tip">
+                    <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                    <div>
+                        <strong>Pro-Tip for Staff:</strong> Roz subah dukan kholte hi application icon par double-click karein. Screen 2 second mein open ho jayegi aur directly billing counter par kaam shuru kiya ja sakta hai.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: Shop Settings -->
+            <section id="sec-setup" class="manual-section" data-category="admin">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 02</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                            Shop Profile &amp; Invoice Settings Setup
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Software shuru karte hi sabse pehle apni dukaan ka profile set karein taaki har bill par aapka naam aur terms print hon.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Admin Menu ➔ Shop Settings par jayein</div>
+                            <div class="step-text">Top navigation bar mein <strong>Admin</strong> par click karein aur <strong>Shop Settings</strong> chunein.</div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Dukaan ki details bharein</div>
+                            <div class="step-text">
+                                <strong>Shop Name:</strong> Dukan ka naam (jaise: <em>Aman Garments &amp; Collections</em>).<br>
+                                <strong>Tagline:</strong> Slogan (jaise: <em>Family Fashion Store</em>).<br>
+                                <strong>Phone &amp; Address:</strong> Mobile no. aur complete dukan address.<br>
+                                <strong>GSTIN (Optional):</strong> Agar GST number hai toh enter karein, warna khali chod dein.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Invoice Return Terms set karein</div>
+                            <div class="step-text">
+                                Bill ke neeche chhapne wali policy likhein. Jaise:<br>
+                                <em>1. 7 dino ke andar bill ke saath exchange sambhav hai.<br>2. Bik chuka maal wapas nahi hoga, sirf badla jayega.<br>3. Dhule ya altered kapde exchange nahi honge.</em>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-success">
+                    <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                    <div>
+                        <strong>Impact:</strong> Yeh settings ek baar save karne ke baad har thermal receipt slip aur A4 invoice par automatic header aur footer ban kar chhapne lagengi.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Categories & Brands -->
+            <section id="sec-categories-brands" class="manual-section" data-category="products">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 03</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                            Categories &amp; Brands Kaise Banayein?
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Kapdon ko dukan mein vyavasthit rakhne ke liye unhe Categories aur Brands mein divide kiya jata hai. Naya product dalne se pehle Category aur Brand banana zaroori hai.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">A</div>
+                        <div class="step-content">
+                            <div class="step-title">Categories Setup (Products ➔ Categories)</div>
+                            <div class="step-text">
+                                <strong>+ Add Category</strong> button dabayein. Name dalein jaise: <em>Men Shirts, Jeans, Sarees, Kurti Sets, Kids Wear, T-Shirts, Formal Trousers</em>.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">B</div>
+                        <div class="step-content">
+                            <div class="step-title">Brands Setup (Products ➔ Brands)</div>
+                            <div class="step-text">
+                                <strong>+ Add Brand</strong> button dabayein. Name dalein jaise: <em>Allen Solly, Raymond, Levi's, Mufti, Killer</em> ya agar non-branded/local kapde hain toh <em>Regular Brand</em> naam se bana sakte hain.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Products & Variants Master -->
+            <section id="sec-products" class="manual-section" data-category="products">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 04</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                            Product &amp; Variants Entry (Size, Color, Pricing)
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Kapdon ki dukaan mein ek hi shirt ke alag-alag <strong>Size</strong> (38, 40, 42) aur <strong>Color</strong> (Blue, Black, White) hote hain. VastraFlow isme Parent Product aur Child Variants structure use karta hai.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Step 1: Main Product Banayein</div>
+                            <div class="step-text">
+                                <strong>Products ➔ All Products ➔ + Add Product</strong> par jayein.<br>
+                                • Product Name: <em>Cotton Casual Shirt</em><br>
+                                • Category: <em>Men Shirts</em> | Brand: <em>Allen Solly</em><br>
+                                • HSN Code (Optional): Jaise <em>6205</em>. Product image upload kar sakte hain. Save karein.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Step 2: Variants (Size &amp; Color) Jodein</div>
+                            <div class="step-text">
+                                Product open karke <strong>+ Add Variant</strong> dabayein:<br>
+                                • <strong>Size:</strong> M, L, XL, 32, 34, Free Size<br>
+                                • <strong>Colour:</strong> Sky Blue, Jet Black, Navy<br>
+                                • <strong>SKU / Barcode:</strong> Ek unique code (jaise: <code>AS-SHT-BLU-M</code>) ya kapde par laga barcode number scan karein.<br>
+                                • <strong>Reorder Point:</strong> Minimum stock limit (default: 5 piece) taaki khatam hone par alert mile.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Step 3: Three-Tier Pricing (Teen Rate System)</div>
+                            <div class="step-text">
+                                1. <strong>Purchase Cost (₹):</strong> Dukaan ko wholesale mein kitne ka pada (jaise ₹650).<br>
+                                2. <strong>MRP (₹):</strong> Tag par kitna chhapna hai (jaise ₹1,499).<br>
+                                3. <strong>Selling Price (₹):</strong> Counter par customer ko kitne mein bechna hai (jaise ₹1,199).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-tip">
+                    <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                    <div>
+                        <strong>Bulk Excel Upload:</strong> Agar aapke paas 500 ya 1000 kapdon ki list hai, toh <strong>Products ➔ Download Template</strong> se Excel file download karein, usme data bharein aur <strong>Import Excel</strong> button se 10 second mein poora stock upload kar lein!
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Barcode Printing -->
+            <section id="sec-barcodes" class="manual-section" data-category="products">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 05</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="8" x2="7" y2="16"/><line x1="11" y1="8" x2="11" y2="16"/><line x1="15" y1="8" x2="15" y2="16"/><line x1="17" y1="8" x2="17" y2="16"/></svg>
+                            Barcode Tag Sticker Printing (Kapdon par lagane ke liye)
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Kapdon par barcode tag laga hone se counter par 1 second mein billing hoti hai aur koi salesman galat rate nahi bol pata.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Barcode Tag Button par click karein</div>
+                            <div class="step-text">
+                                Kisi bhi Product detail page par <strong>Print Barcode Tags</strong> button dabayein, ya kisi specific variant ke aage <strong>Tag</strong> icon par click karein.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Tag Preview &amp; Copies chunein</div>
+                            <div class="step-text">
+                                Screen par tag ka preview aa jayega jisme dukan ka naam, kapde ka naam, Size, Color, MRP, aur scan karne yogya Barcode dikhega. Kitni copies print karni hain (e.g., 10 pieces) wo select karein.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Sticker Sheet par Print karein</div>
+                            <div class="step-text">
+                                <kbd class="kbd-badge">Ctrl + P</kbd> dabayein aur apne Barcode Printer (jaise TVS, Zebra, TSC) ya A4 sticker sheet par print karke kapdon par tag laga dein.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 6: Wholesale Purchases -->
+            <section id="sec-purchases" class="manual-section" data-category="purchases">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 06</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                            Wholesale Purchases (Dukaan mein Maal Aana / Inward)
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Surat, Delhi, ya local dealer se jab kapdon ka naya parcel ya wholesale bill aata hai, toh uski entry yahan hoti hai taaki stock automatically badh jaye aur dealer ka hisab ban jaye.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Purchases ➔ New Purchase Order par jayein</div>
+                            <div class="step-text">
+                                • <strong>Supplier:</strong> Dealer chunein (jaise: <em>Surat Textile Syndicate</em>). Naya dealer ho toh wahin se bana sakte hain.<br>
+                                • <strong>Invoice Ref:</strong> Dealer ke bill ka number dalein (jaise: <code>ST-8942</code>).<br>
+                                • <strong>Purchase Date:</strong> Bill ki tareekh.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Kapdon ke Items aur Quantity Dalein</div>
+                            <div class="step-text">
+                                Jo-jo items parcel mein aaye hain unhe list mein chunein, kitne piece aaye (Quantity) aur per piece kya rate pada (Cost Price) dalein. Total amount system jod lega.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Payment &amp; Due (Udhar) Status</div>
+                            <div class="step-text">
+                                • <strong>Amount Paid:</strong> Agar aapne abhi dealer ko kuch paisa de diya hai (e.g. ₹10,000) toh wo dalein.<br>
+                                • <strong>Baki Amount:</strong> Jo paisa baki reh jayega, wo automatically us <strong>Supplier ke Khate (Balance Due)</strong> mein jud jayega.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-warning">
+                    <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    <div>
+                        <strong>Supplier Return (Debit Note):</strong> Agar parcel mein koi kapda kata-phata nikla ya rang utra hua aaya, toh <strong>Purchases ➔ Purchase Returns</strong> se dealer ko wapas bhej sakte hain. Utna stock minus ho jayega aur dealer ke khate se paisa kam ho jayega.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 7: Counter POS Billing -->
+            <section id="sec-pos-billing" class="manual-section" data-category="billing">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 07</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                            Counter POS Billing (Fast Barcode &amp; Cash Billing)
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Yeh screen dukaan ka sabse mukhya hissa hai jahan counter staff customer ka bill banata hai. Isme fast shortcuts aur barcode scanner support shamil hai.
+                </p>
+
+                <!-- Hotkeys HUD -->
+                <div class="hotkeys-hud-grid">
+                    <div class="hotkey-card">
+                        <div class="info">
+                            <span class="name">Quick SKU Search</span>
+                            <span class="desc">Search box par focus</span>
+                        </div>
+                        <kbd class="kbd-badge">F4 ya /</kbd>
+                    </div>
+                    <div class="hotkey-card">
+                        <div class="info">
+                            <span class="name">Add New Item Row</span>
+                            <span class="desc">Nayi line jodein</span>
+                        </div>
+                        <kbd class="kbd-badge">F2</kbd>
+                    </div>
+                    <div class="hotkey-card">
+                        <div class="info">
+                            <span class="name">Pay Exact Amount</span>
+                            <span class="desc">Total bill auto-fill</span>
+                        </div>
+                        <kbd class="kbd-badge">F9</kbd>
+                    </div>
+                    <div class="hotkey-card">
+                        <div class="info">
+                            <span class="name">Save &amp; Complete Bill</span>
+                            <span class="desc">Bill save aur print</span>
+                        </div>
+                        <kbd class="kbd-badge">Ctrl + Enter</kbd>
+                    </div>
+                </div>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Barcode Scan Karein ya Search Box use karein</div>
+                            <div class="step-text">
+                                • Scanner se kapde ka tag scan karein, item turant cart mein add ho jayega.<br>
+                                • Ya fir <kbd class="kbd-badge">F4</kbd> dabayein aur kapde ka naam ya size likhein (jaise <em>Black Shirt M</em>) aur suggestion par Enter dabayein.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Quantity &amp; Discount Adjust karein</div>
+                            <div class="step-text">
+                                Customer 2 piece le raha hai toh Qty <code>2</code> karein. Agar kisi item par ₹50 chhot deni hai toh Discount box mein <code>50</code> dalein. Total amount automatically calculate hoga.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Customer Chunein (Optional)</div>
+                            <div class="step-text">
+                                Aam walk-in customer ke liye khali rehne dein. Agar koi regular customer hai toh dropdown se chunein ya <strong>+ New Customer</strong> dabakar 5 second mein uska Naam aur Mobile No. save kar lein.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <div class="step-title">Payment Method &amp; Cash Tendered Calculator</div>
+                            <div class="step-text">
+                                • Payment mode select karein: <strong>CASH</strong>, <strong>UPI (GPay/PhonePe/QR)</strong>, <strong>CARD</strong>, ya <strong>CREDIT (Udhar)</strong>.<br>
+                                • <kbd class="kbd-badge">F9</kbd> dabayein taaki pura bill amount Amount Paid box mein bhar jaye.<br>
+                                • <strong>Cash Tendered Calculator:</strong> Agar bill ₹1,240 ka hai aur customer ne ₹2,000 ka note diya, toh Cash Tendered box mein <code>2000</code> likhein. Screen par green color mein dikhega: <strong style="color:var(--success);">Change to Return: ₹760.00</strong>.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <div class="step-title">Complete Bill &amp; Print</div>
+                            <div class="step-text">
+                                <kbd class="kbd-badge">Ctrl + Enter</kbd> dabayein ya <strong>Complete Sale</strong> button click karein. Bill generate ho jayega aur receipt print ho jayegi!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-danger">
+                    <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                    <div>
+                        <strong>Walk-in Udhar Warning:</strong> Agar customer ke paas paisa kam hai aur baki paisa baad mein dena chahta hai, toh <em>Walk-in</em> mat chodiye! <strong>Customer ka Naam aur Phone number register karke select karein</strong>, taaki wo baki paisa us customer ke Khate mein record ho sake.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 8: Invoices & Receipts -->
+            <section id="sec-invoices" class="manual-section" data-category="billing">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 08</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            Invoice &amp; Thermal Receipts (Print Kaise Karein?)
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    VastraFlow do tarah ke print format support karta hai: POS Receipt Printer (80mm/3-inch) aur Standard A4 Full Sheet Invoice.
+                </p>
+
+                <div class="table-responsive">
+                    <table class="manual-table">
+                        <thead>
+                            <tr>
+                                <th>Print Format</th>
+                                <th>Printer Type</th>
+                                <th>Kab Use Karein?</th>
+                                <th>Kaise Nikalein?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Thermal Receipt (80mm/58mm)</strong></td>
+                                <td>POS Thermal Printer (EPSON, TVS, NGX, Rongta)</td>
+                                <td>Counter par fast bill slip dene ke liye (Roll paper par)</td>
+                                <td>Invoice par <strong>Thermal Receipt</strong> button dabayein. Isme Invoice Barcode bhi print hota hai.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>A4 Standard Tax Invoice</strong></td>
+                                <td>Normal Inkjet / Laser Printer (HP, Canon, Brother)</td>
+                                <td>Bade orders, GST tax invoice, ya corporate customer ke liye</td>
+                                <td>Invoice par <strong>Print Invoice</strong> ya <strong>Download PDF</strong> button dabayein.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 9: Customer Returns & Exchanges -->
+            <section id="sec-returns" class="manual-section" data-category="billing">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 09</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="1 4 1 10 7 10"/><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/></svg>
+                            Customer Returns &amp; Size Exchanges
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Kapdon ki dukaan mein customer size chota ya bada hone par badalwane zaroor aata hai. VastraFlow mein return aur exchange dono 1-minute mein ho jate hain.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Bill Number Lookup Karein (Sales ➔ Customer Returns)</div>
+                            <div class="step-text">
+                                Customer ke bill par chhapa invoice number dalein (jaise: <code>INV-202610-0012</code>) aur <strong>Find Invoice</strong> dabayein.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Case A: Item Wapas Lena (Return)</div>
+                            <div class="step-text">
+                                Jo kapda wapas aaya hai uski quantity chunein (e.g. 1 piece). System turant utna stock wapas inventory mein jod lega (`RETURN_IN`) aur customer ko diye jane wale refund ka hisab bana dega.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Case B: Size Badalna (Exchange)</div>
+                            <div class="step-text">
+                                Customer Size 'M' dekar Size 'L' le raha hai:<br>
+                                • Purane item ko Return mein dalein.<br>
+                                • Naye item ko Replacement mein dalein.<br>
+                                • <strong>Math Difference:</strong> Agar dono ka rate same hai toh settlement ₹0 hoga. Agar naya item mehnga hai toh customer se baki paisa collect hoga; agar sasta hai toh customer ko refund diya jayega.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 10: Inventory Tracking & Adjustments -->
+            <section id="sec-inventory" class="manual-section" data-category="products">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 10</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                            Inventory Control, Stock Adjustment &amp; Dead Stock
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Dukaan mein kitna maal bacha hai, kaunsa khatam hone wala hai aur kaunsa kapda salon se nahi bika, ye sab yahan dekha jata hai.
+                </p>
+
+                <div class="table-responsive">
+                    <table class="manual-table">
+                        <thead>
+                            <tr>
+                                <th>Feature Screen</th>
+                                <th>Kya Kaam Aata Hai?</th>
+                                <th>Kisko Use Karna Chahiye?</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Stock Overview (`/inventory`)</strong></td>
+                                <td>Live stock count, size-wise stock dekhna, out-of-stock items ki list.</td>
+                                <td>Admin aur Staff dono dekh sakte hain.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Reorder Alerts (`/inventory/reorder`)</strong></td>
+                                <td>Jo kapde minimum level se kam bache hain, unki auto-list taaki naya order diya ja sake.</td>
+                                <td>Shop Owner (Admin) purchase order banane ke liye.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Manual Stock Adjustment (`/inventory/adjust`)</strong></td>
+                                <td>Agar physically ginne par 1 piece kam ya jyada nikle (chori, damage, sample, counting diff). Mandatory reason ke saath stock modify kiya jata hai.</td>
+                                <td>Sirf Admin kar sakta hai (Security Audit Lock).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dead Stock Report (`/inventory/dead-stock`)</strong></td>
+                                <td>Jo kapde 30, 60, ya 90 dino se bilkul nahi biken. Unpar discount sale lagane ke liye.</td>
+                                <td>Shop Owner (Admin).</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Valuation Report (`/inventory/valuation`)</strong></td>
+                                <td>Dukaan mein rakhe poore stock ki aaj ki total kharid kimat (WAC / FIFO / Latest Cost).</td>
+                                <td>Shop Owner (Admin) for Net Worth &amp; Balance Sheet.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 11: Customer & Supplier Khata -->
+            <section id="sec-khata" class="manual-section" data-category="khata">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 11</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            Customer &amp; Supplier Khata (Udhar &amp; Payment Ledger)
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Kisi customer par kitna udhar baki hai aur kis wholesale dealer ko kitna payment dena hai, iska poora digital khata VastraFlow maintain karta hai.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Customer Khata (Grahak ka Udhar)</div>
+                            <div class="step-text">
+                                • <strong>Customers</strong> menu mein jayein. Jis customer par baki hai unke naam ke samne <em>Due: ₹X,XXX</em> red color mein dikhega.<br>
+                                • Jab customer aakar paisa jama kare, toh unke profile par <strong>Record Payment</strong> dabayein.<br>
+                                • Amount dalein (e.g. ₹2,000) aur payment method (Cash ya UPI) select karein. System unka balance kam kar dega aur payment receipt generate kar dega.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Supplier Khata (Dealer ka Payment)</div>
+                            <div class="step-text">
+                                • <strong>Suppliers</strong> menu mein dealer ka profile kholein.<br>
+                                • Unke sabhi purane purchase bills aur unpaid balance ki list dikhegi.<br>
+                                • Jab aap dealer ko RTGS/NEFT/Cheque ya Cash se payment karein, toh <strong>Record Supplier Payment</strong> dabakar entry karein taaki unka khata clear ho sake.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 12: Daily Store Expenses -->
+            <section id="sec-expenses" class="manual-section" data-category="admin">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 12</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+                            Shop Daily Expenses (Dukaan ke Rozmarra ke Kharche)
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Dukaan ke chote-mote kharche note na karne se mahine ke aakhir mein hisab gadbada jata hai. VastraFlow mein har kharcha turant record karein.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Expenses ➔ + New Expense par jayein</div>
+                            <div class="step-text">
+                                <strong>Category chunein:</strong> Tea &amp; Refreshments (Chai-nasta), Electricity (Bijli bill), Shop Rent, Packaging (Carry bags/boxes), Staff Salary, Repairs &amp; Maintenance, ya Miscellaneous.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Amount aur Description Dalein</div>
+                            <div class="step-text">
+                                Amount dalein (e.g. ₹150) aur description dalein (e.g. <em>Counter staff tea &amp; biscuits</em>). Payment mode chunein (CASH ya UPI) aur save karein.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="callout callout-tip">
+                    <svg class="callout-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                    <div>
+                        <strong>Net Profit Auto-Calculation:</strong> Yeh kharche aapke mahine ke P&amp;L (Profit &amp; Loss) report mein gross profit se automatically minus hokar <strong>Asli Net Profit</strong> dikhate hain.
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 13: Day Closing & Reports -->
+            <section id="sec-reports" class="manual-section" data-category="admin">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 13</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                            Daily Closing &amp; Sales Reports (Raat ko Dukan Band Karte Waqt)
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Raat ko dukaan badhate waqt counter ka cash milana aur din bhar ki sale check karna dukan ke maalik ke liye sabse mahatvapoorna kaam hai.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">Reports ➔ Operations Tab (Cash Drawer Tally)</div>
+                            <div class="step-text">
+                                System batayega:<br>
+                                • <strong>Total Cash Collected:</strong> Aaj counter par kitna cash aaya.<br>
+                                • <strong>Total UPI Collected:</strong> Scanner/QR code se kitna payment bank mein gaya.<br>
+                                • <strong>Cash Paid for Expenses:</strong> Aaj dukan ke kharche mein kitna cash nikla.<br>
+                                • <strong>Expected Cash in Drawer:</strong> Cashier ke galle mein kitne rupaye hone chahiye.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">P&amp;L Report (Profit &amp; Loss Tab)</div>
+                            <div class="step-text">
+                                Is tab mein aap dekh sakte hain ki aaj ya is mahine:<br>
+                                • Total Bikri (Net Revenue) kitni hui.<br>
+                                • Us bikri ka asal Kharid Bhav (Cost of Goods Sold) kya tha.<br>
+                                • Gross Profit kitna hua aur kharche katkar <strong>Net Pocket Profit</strong> kitna bacha.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <div class="step-title">Export to Excel / CSV</div>
+                            <div class="step-text">
+                                CA ya accountant ko bhejne ke liye <strong>Export Sales CSV</strong> button dabayein. Poori sale sheet Excel format mein download ho jayegi.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 14: Backups & Data Safety -->
+            <section id="sec-backups" class="manual-section" data-category="admin">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 14</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+                            Data Safety, Automated Backups &amp; Restore
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Computer kharab ho jaye, Windows crash ho ya virus aa jaye, aapka dukan data hamesha surakshit rahe iske liye VastraFlow automated backup system use karta hai.
+                </p>
+
+                <div class="step-cards-container">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <div class="step-title">1-Click Manual Backup (Admin ➔ Database Backups)</div>
+                            <div class="step-text">
+                                Hafte mein ek baar <strong>+ Create Backup Now</strong> button dabayein. System database ki timestamped copy bana lega.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <div class="step-title">Pen Drive / External Hard Drive mein Copy Karein</div>
+                            <div class="step-text">
+                                Backup file ko apni Pen Drive ya Google Drive mein copy kar lein. Agar computer change karna ho, toh naye computer mein VastraFlow install karke 1-click mein <strong>Restore</strong> dabakar purana sara data wapas aa jata hai.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 15: Hotkeys Reference HUD -->
+            <section id="sec-hotkeys" class="manual-section" data-category="billing">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 15</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="6" y1="8" x2="6" y2="8"/><line x1="10" y1="8" x2="10" y2="8"/><line x1="14" y1="8" x2="14" y2="8"/><line x1="18" y1="8" x2="18" y2="8"/><line x1="6" y1="12" x2="6" y2="12"/><line x1="18" y1="12" x2="18" y2="12"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+                            Counter Hotkeys Cheat Sheet (Counter Boy Reference)
+                        </h2>
+                    </div>
+                </div>
+                <p class="section-desc-hinglish">
+                    Ye shortcut keys counter staff ko yaad karwa dein taaki bina mouse chuwe super-fast billing ho sake:
+                </p>
+
+                <div class="table-responsive">
+                    <table class="manual-table">
+                        <thead>
+                            <tr>
+                                <th>Shortcut Key</th>
+                                <th>Action / Kaam</th>
+                                <th>Kahan Kaam Karta Hai?</th>
+                                <th>Fayda</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><kbd class="kbd-badge">F2</kbd></td>
+                                <td>Add Line Item</td>
+                                <td>Billing Screen</td>
+                                <td>Cart mein nayi row jud jati hai</td>
+                            </tr>
+                            <tr>
+                                <td><kbd class="kbd-badge">F4</kbd> ya <kbd class="kbd-badge">/</kbd></td>
+                                <td>Quick SKU / Product Search</td>
+                                <td>Billing Screen</td>
+                                <td>Search bar par cursor turant jump kar jata hai</td>
+                            </tr>
+                            <tr>
+                                <td><kbd class="kbd-badge">F9</kbd></td>
+                                <td>Pay Exact / Full Amount</td>
+                                <td>Billing Screen</td>
+                                <td>Total bill amount 'Amount Paid' box mein auto-fill ho jata hai</td>
+                            </tr>
+                            <tr>
+                                <td><kbd class="kbd-badge">Ctrl + Enter</kbd></td>
+                                <td>Save &amp; Complete Bill</td>
+                                <td>Billing Screen</td>
+                                <td>Bina mouse click kiye bill complete ho jata hai</td>
+                            </tr>
+                            <tr>
+                                <td><kbd class="kbd-badge">Tab</kbd></td>
+                                <td>Next Field</td>
+                                <td>Poore Software mein</td>
+                                <td>Agale input box mein jump karne ke liye</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Section 16: FAQs & Troubleshooting -->
+            <section id="sec-faqs" class="manual-section" data-category="admin">
+                <div class="section-header">
+                    <div>
+                        <span class="section-badge-id">Section 16</span>
+                        <h2 class="section-title">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                            Frequently Asked Questions (Aam Sawal-Jawab &amp; Solutions)
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q1: Agar barcode scanner se scan na ho toh kya karein?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Bheed ke samay ghabrayein nahi! Keyboard par <kbd class="kbd-badge">F4</kbd> ya <kbd class="kbd-badge">/</kbd> dabayein aur kapde ka naam ya size type karein (e.g. <em>White Shirt 40</em>). Dropdown se select karke Enter dabayein, item turant add ho jayega. Barcode scanner ki USB wire bhi check kar lein.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q2: Kya cashier shop ke kharid bhav (Cost Price) ya munafa dekh sakta hai?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <strong>Nahi!</strong> Agar cashier ka account 'Staff' role par bana hai, toh use kharid bhav, profit margins, aur P&amp;L reports bilkul nahi dikhte. Staff ko sirf MRP, Selling Price, aur Billing access hota hai.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q3: Galat bill ban gaya ya customer ne lene se mana kar diya, toh kya karein?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <strong>Sales ➔ Customer Returns</strong> mein jayein, us bill ka invoice number dalein aur item ko Return select karein. Utna stock turant dukaan ke stock mein wapas jud jayega aur cash balance adjust ho jayega.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q4: 15-day trial khatam hone par kya mera data delete ho jayega?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <strong>Nahi, bilkul nahi!</strong> Trial khatam hone par software Read-Only mode mein switch ho jata hai taaki aapka ek bhi bill ya stock data loose na ho. <em>Admin ➔ License &amp; Activation</em> screen par jakar official license key enter karte hi software wapas full functionality mein activate ho jata hai.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Q5: Naye computer par shift karna ho toh kaise karein?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Purane computer se <strong>Admin ➔ Database Backups ➔ Create Backup</strong> karein aur banayi gayi <code>.db</code> file ko Pen Drive mein le lein. Naye computer mein VastraFlow install karke us backup file ko restore kar lein. Aapka 100% data naye PC par chalu ho jayega.
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Floating Back to Top Button -->
+    <button class="back-to-top" id="backToTopBtn" title="Wapas Upar Jayein">
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p><strong>VastraFlow</strong> - Clothing Shop Retail Management System &bull; Training &amp; User Manual Guide</p>
+        <p style="margin-top: 5px; font-size: 0.82rem; color: var(--text-subtle);">Designed for 100% Offline Retail Counter Excellence &bull; <strong>Version 3.0</strong></p>
+        <p class="footer-credit">
+            Designed by <span class="author-name-glow">Aman Vishwakarma</span>
+        </p>
+    </footer>
+
+    <!-- Interactive Search, Filter & Theme Script -->
+    <script>
+        // Theme Toggle (Dark / Light)
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeText = document.getElementById('themeText');
+        const htmlEl = document.documentElement;
+
+        function setTheme(theme) {
+            htmlEl.setAttribute('data-theme', theme);
+            themeText.textContent = theme === 'dark' ? 'Light' : 'Dark';
+            try { localStorage.setItem('vastraflow_manual_theme', theme); } catch(e) {}
+        }
+
+        const savedTheme = localStorage.getItem('vastraflow_manual_theme') || 'dark';
+        setTheme(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const current = htmlEl.getAttribute('data-theme');
+            setTheme(current === 'dark' ? 'light' : 'dark');
+        });
+
+        // FAQ Accordion Open/Close
+        document.querySelectorAll('.faq-question').forEach(header => {
+            header.addEventListener('click', () => {
+                const parent = header.parentElement;
+                parent.classList.toggle('open');
+            });
+        });
+
+        // Live Search Filter across all manual sections
+        const searchInput = document.getElementById('manualSearchInput');
+        const sections = document.querySelectorAll('.manual-section');
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase().trim();
+            if (!term) {
+                sections.forEach(sec => sec.style.display = 'block');
+                return;
+            }
+
+            sections.forEach(sec => {
+                const text = sec.innerText.toLowerCase();
+                if (text.includes(term)) {
+                    sec.style.display = 'block';
+                } else {
+                    sec.style.display = 'none';
+                }
+            });
+        });
+
+        // Category Filter Tabs
+        const filterBtns = document.querySelectorAll('.filter-tab-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const filter = btn.getAttribute('data-filter');
+                searchInput.value = '';
+
+                sections.forEach(sec => {
+                    if (filter === 'all') {
+                        sec.style.display = 'block';
+                    } else {
+                        const secCat = sec.getAttribute('data-category');
+                        if (secCat === filter) {
+                            sec.style.display = 'block';
+                        } else {
+                            sec.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+
+        // Active Sidebar Navigation Highlight on Scroll
+        const navLinks = document.querySelectorAll('.nav-link');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= (sectionTop - 120)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Back to top visibility
+            const backToTopBtn = document.getElementById('backToTopBtn');
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        // Back to top click
+        document.getElementById('backToTopBtn').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
+</body>
+</html>
