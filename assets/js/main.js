@@ -1,6 +1,6 @@
 /**
  * VastraFlow Official Landing Page JavaScript
- * Lucide Icons Integration, Mockup Tabs, FAQ Accordion, Download Modal
+ * Clean English | Lucide Icons | Modal & FAQ Controller
  * Zero Emdash Guaranteed
  */
 
@@ -16,14 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (mobileToggle && navLinks) {
     mobileToggle.addEventListener("click", () => {
       navLinks.classList.toggle("mobile-open");
-      const icon = mobileToggle.querySelector("i, svg");
-      if (icon) {
-        if (navLinks.classList.contains("mobile-open")) {
-          mobileToggle.setAttribute("aria-label", "Close Navigation");
-        } else {
-          mobileToggle.setAttribute("aria-label", "Open Navigation");
-        }
-      }
     });
 
     // Close mobile nav when clicking a link
@@ -33,34 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
-  // Interactive App Showcase Screen Tabs
-  const mockupTabs = document.querySelectorAll(".mockup-tab-btn");
-  const mockupScreens = document.querySelectorAll(".mockup-screen");
-
-  mockupTabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      const targetScreenId = tab.getAttribute("data-target");
-
-      // Update tab active state
-      mockupTabs.forEach((t) => t.classList.remove("active"));
-      tab.classList.add("active");
-
-      // Show target screen
-      mockupScreens.forEach((screen) => {
-        if (screen.id === targetScreenId) {
-          screen.classList.add("active");
-        } else {
-          screen.classList.remove("active");
-        }
-      });
-
-      // Re-trigger icon rendering if needed
-      if (typeof lucide !== "undefined" && lucide.createIcons) {
-        lucide.createIcons();
-      }
-    });
-  });
 
   // FAQ Accordion
   const faqItems = document.querySelectorAll(".faq-item");
@@ -101,8 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   downloadButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      // Small timeout to allow browser download to start before showing helpful setup guide
-      setTimeout(openDownloadModal, 600);
+      setTimeout(openDownloadModal, 500);
     });
   });
 
