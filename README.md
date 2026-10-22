@@ -48,9 +48,10 @@ VastraFlow is a 100% offline retail management, point-of-sale (POS), and invento
 
 1. Download the latest installer: [VastraFlow_Setup_v3.0.exe](https://github.com/BeginnerAman/VastraFlow/releases/download/v3.0.0/VastraFlow_Setup_v3.0.exe).
 2. Double-click to launch the setup wizard.
-3. Follow the simple on-screen instructions (no administrative UAC elevation prompt required).
-4. Launch VastraFlow from the desktop shortcut.
-5. Create your initial Shop Owner account and begin your 15-day free trial.
+3. If Windows SmartScreen displays a notice, click "More info" and select "Run anyway".
+4. Follow the simple on-screen instructions (no administrative UAC elevation prompt required).
+5. Launch VastraFlow from the desktop shortcut.
+6. Create your initial Shop Owner account and begin your 15-day free trial.
 
 ---
 
